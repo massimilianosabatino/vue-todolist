@@ -23,6 +23,10 @@ createApp({
     addItem(){
         this.todos.push({text: this.newTask, done: false});
         this.newTask = '';
+    },
+    getDone(){
+        const clickedElement = event.currentTarget.getAttribute('position');
+        this.todos[clickedElement].done = !this.todos[clickedElement].done;
     }
   }
 }).mount('#app')

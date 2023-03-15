@@ -30,7 +30,7 @@
                 <div class="col col-md-8">
                     <ul class="list-group todo-container">
                         <template v-for="(todo, index) in todos" v-if="todos.length > 0">
-                            <li class="list-group-item d-flex justify-content-between align-items-center" :class="{checked: todo.done}">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" :class="{checked: todo.done}" @click="getDone" :position="index">
                                 <div class="text-todo">{{ todo.text }}</div>
                                 <div class="delete-todo" role="button" @click="removeItem(index)"><i class="fa-solid fa-circle-xmark"></i></i></div>
                             </li>
