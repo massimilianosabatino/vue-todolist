@@ -20,11 +20,16 @@
             <h1 class="text-center">To Do List</h1>
             <div class="row justify-content-center my-5">
                 <div class="col col-md-8">
-                <ul class="list-group">
-                    <template v-for="todo in todos">
-                        <li class="list-group-item" :class="{checked: todo.done}">{{ todo.text }}</li>
-                    </template>
-                </ul>
+                    <ul class="list-group todo-container">
+                        <template v-for="(todo, index) in todos" v-if="todos.length > 0">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" :class="{checked: todo.done}">
+                                <div class="text-todo">{{ todo.text }}</div>
+                                <div class="delete-todo" role="button" @click="removeItem(index)"><i class="fa-solid fa-circle-xmark"></i></i></div>
+                            </li>
+                        </template>
+                        <div class="text-center" v-else>Evviva, non hai più niente da fare per oggi!</div>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

@@ -14,5 +14,11 @@ createApp({
         }
       ]
     }
+  },
+  methods: {
+    removeItem(index){
+        // delete todos[index];
+        this.todos.splice(index, 1)
+    }
   }
 }).mount('#app')
