@@ -3,7 +3,8 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-      todos: [
+        newTask: '',
+        todos: [
         {
             text: 'prova 1',
             done: false
@@ -17,8 +18,11 @@ createApp({
   },
   methods: {
     removeItem(index){
-        // delete todos[index];
-        this.todos.splice(index, 1)
+        this.todos.splice(index, 1);
+    },
+    addItem(){
+        this.todos.push({text: this.newTask, done: false});
+        this.newTask = '';
     }
   }
 }).mount('#app')

@@ -18,7 +18,15 @@
     <div id="app">
         <div class="container">
             <h1 class="text-center">To Do List</h1>
-            <div class="row justify-content-center my-5">
+            <div class="row justify-content-center mt-5">
+                <div class="col col-md-8">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Add To Do" aria-label="Add To Do" aria-describedby="button-addon2" v-model="newTask">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="addItem"><i class="fa-solid fa-circle-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-2 mb-5">
                 <div class="col col-md-8">
                     <ul class="list-group todo-container">
                         <template v-for="(todo, index) in todos" v-if="todos.length > 0">
